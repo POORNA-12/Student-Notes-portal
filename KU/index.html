@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Login</title>
+    <style>
+        *,
+        *:before,
+        *:after {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #71b7e6, #9b59b6);
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            text-align: center;
+            position: relative;
+            padding-top: 250px;
+        }
+
+        .main-title {
+            position: absolute;
+            top: 50px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 50px;
+            font-weight: bold;
+            color: #101010;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .form-container {
+            width: 90%;
+            max-width: 400px;
+            background: #fff;
+            align-items: center;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+            animation: fadeIn 0.8s ease-in-out;
+            margin-top: 10px; /* Adds space between the title and the form */
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .logo {
+            display: block;
+            margin: 0 auto 24px;
+            width: 120px;
+            height: auto;
+        }
+
+        .title {
+            text-align: center;
+            margin-bottom: 24px;
+            font-size: 28px;
+            font-weight: 700;
+            color: #333;
+        }
+
+        .form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .input {
+            border-radius: 20px;
+            border: 1px solid #c0c0c0;
+            padding: 12px 15px;
+            font-size: 16px;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .input:focus {
+            border-color: #007BFF;
+            box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
+        }
+
+        .form-btn {
+            padding: 12px;
+            border-radius: 20px;
+            border: none;
+            background-color: #007BFF;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .form-btn:hover {
+            background-color: #0056b3;
+        }
+
+        .form-btn:active {
+            background-color: #004494;
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+<body>
+    <h1 class="main-title">Krishna University Student Material</h1>
+    <div class="form-container">
+        <!-- College logo above the title -->
+        <img src="Krishna_University-logo-transparent-1.png" alt="College Logo" class="logo">
+        <p class="title">Student Login</p>
+        <form id="loginForm" class="form">
+            <input type="text" id="rollNumber" name="rollnumber" class="input" placeholder="Roll Number" required>
+            <button type="submit" class="form-btn">Log in</button>
+        </form>
+    </div>
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent form submission
+    
+            const enteredRollNumber = document.getElementById("rollNumber").value;
+            const rollNumberPattern = /^[YLyl]\d{2}(CSE|cse|ECE|ece)279\d{3}$/;
+        
+            if (rollNumberPattern.test(enteredRollNumber)) {
+                // Store roll number in localStorage
+                localStorage.setItem('rollNumber', enteredRollNumber);
+    
+                // Extract the year part from the roll number (2 digits after the first character)
+                const year = parseInt(enteredRollNumber.substring(1, 3));
+    
+                if (year <= 22) {
+                    // Redirect based on the department
+                    if (enteredRollNumber.toUpperCase().includes("CSE")) {
+                        window.location.href = "home C.html"; // Redirect to home page for CSE students
+                    } else if (enteredRollNumber.toUpperCase().includes("ECE")) {
+                        alert("The ECE page will be updated soon. Redirecting now...");
+                        window.location.href = ""; // Redirect to home page for ECE students as well
+                    }
+                } else {
+                    // Redirect to home1 if the year is greater than 22
+                    if (enteredRollNumber.toUpperCase().includes("CSE")) {
+                        window.location.href = "home J.html"; // Redirect to home1 page for CSE students with year > 22
+                    } else if (enteredRollNumber.toUpperCase().includes("ECE")) {
+                        alert("The ECE page will be updated soon. Redirecting now...");
+                        window.location.href = ""; // Redirect to home1 page for ECE students with year > 22
+                    }
+                }
+            } else {
+                alert("Invalid roll number format!");
+            }
+        });
+    </script>
+    
+    
+</body>
+</html>

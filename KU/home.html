@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Material</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+header {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #c0d1c1; /* Optional background color */
+}
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+.logo {
+    width: 50px; /* Adjust the size as needed */
+    height: auto;
+    margin-right: 10px; /* Spacing between logo and name */
+}
+.website-name {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.container {
+    padding: 10px;
+}
+.button-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+.semester-container {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+.button-container button, .semester-container button {
+    background-color: #7ea0eb;
+    color: white;
+    border: none;
+    padding: 15px 35px;
+    margin: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 15px;
+    flex: 1 1 175px;
+    text-align: center;
+}
+.button-container button:hover, .semester-container button:hover {
+    background-color: #45a049;
+}
+.details-container {
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+.details-container h2 {
+    margin-top: 0;
+}
+.syllabus-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto; /* Center the image */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+.unit-buttons {
+    display: flex;
+    flex: wrap; /* Arrange buttons in a column */
+    gap: 10px; /* Space between buttons */
+}
+
+.unit-buttons button {
+    background-color: #7ea0eb;
+    color: white;
+    border: none;
+    padding: 10px 15px; /* Padding for button size */
+    cursor: pointer;
+    font-size: 14px; /* Font size for button text */
+    border-radius: 10px; /* Rounded corners */
+    flex: 1 1 auto; /* Allow buttons to grow if needed */
+    max-width: 150px; /* Set a minimum width to ensure uniform button size */
+    text-align: center; /* Center-align text inside buttons */
+}
+
+.download-link {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+}
+.download-link a {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+.download-link a:hover {
+    background-color: #45a049;
+}
+.syllabus-container {
+    display: none;
+}
+.syllabus-container.active {
+    display: block;
+}
+
+.subject-container {
+    display: none;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+.subject-container.active {
+    display: block;
+}
+.subject-container button {
+    background-color: #7ea0eb;
+    color: white;
+    border: none;
+    padding: 15px 25px;
+    margin: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 15px;
+    flex: 1 1 175px;
+    text-align: center;
+}
+.subject-container button:hover {
+    background-color: #45a049;
+}
+.unit-section {
+margin-top: 20px;
+}
+
+.download-link {
+margin-top: 10px;
+}
+
+.unit-buttons {
+display: flex;
+gap: 10px;
+margin-top: 10px;
+}
+
+.unit-buttons button {
+background-color: #7ea0eb;
+color: white;
+border: none;
+padding: 10px 15px;
+cursor: pointer;
+font-size: 14px;
+border-radius: 10px;
+}
+
+.unit-buttons button:hover {
+background-color: #45a049;
+}
+    </Style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="Krishna_University-logo-transparent-1.png" alt="Website Logo" class="logo" />
+            <span class="website-name">KRUCET</span>
+        </div>
+    </header>
+    
+    <main class="container">
+        <h1>Select Year for Notes..</h1>
+        <section class="button-container">
+            <button onclick="showDetails('1st')">1st Year</button>
+            <button onclick="showDetails('2nd')">2nd Year</button>
+            <button onclick="showDetails('3rd')">3rd Year</button>
+            <button onclick="showDetails('4th')">4th Year</button>
+        </section>
+        
+        <section class="semester-container" id="semester-selection">
+        </section>
+        
+        <section id="details" class="details-container">
+            <!--<p>Select a year to view the details.</p>-->
+        </section>
+        
+        <section id="syllabus-container" class="details-container">
+            <!-- 1st Year -->
+            <div class="syllabus-container" id="syllabus-1st-1">
+                <div class="subject-container" id="subjects-1st-1">
+                    <button onclick="showUnits('subject1')">Subject 1</button>
+                    <button onclick="showUnits('subject2')">Subject 2</button>
+                    <button onclick="showUnits('subject3')">Subject 3</button>
+                    <button onclick="showUnits('subject4')">Subject 4</button>
+                    <button onclick="showUnits('subject5')">Subject 5</button>
+                    <!--<button onclick="showUnits('subject48')">Subject 6</button>-->
+                </div>
+            
+                <!-- Unit sections for each subject -->
+                <div class="unit-section" id="subject1-units" style="display: none;">
+                    <embed src="car.png" type="application/pdf" width="80%" height="800px" />
+                    <div class="download-link">
+                        <a href="car.png" download>Download Syllabus</a>
+                    </div>
+                    <div class="unit-buttons">
+                        <a href="pdfs/Data Base Management System - - Week 0.pdf" target="_blank"><button>Unit 1 Notes</button></a>
+                        <a href="path/to/unit2_notes.pdf" target="_blank"><button>Unit 2 Notes</button></a>
+                        <a href="path/to/unit3_notes.pdf" target="_blank"><button>Unit 3 Notes</button></a>
+                        <a href="path/to/unit4_notes.pdf" target="_blank"><button>Unit 4 Notes</button></a>
+                        <a href="path/to/unit5_notes.pdf" target="_blank"><button>Unit 5 Notes</button></a>
+                    </div>
+                    
+                </div>
+            
+                <div class="unit-section" id="subject2-units" style="display: none;">
+                    <embed src="car.png" type="application/pdf" width="80%" height="800px" />
+                    <div class="download-link">
+                        <a href="car.png" download>Download Syllabus</a>
+                    </div>
+                    <div class="unit-buttons">
+                        <a href="pdfs/Data Base Management System - - Week 0.pdf" target="_blank"><button>Unit 1 Notes</button></a>
+                        <a href="path/to/unit2_notes.pdf" target="_blank"><button>Unit 2 Notes</button></a>
+                        <a href="path/to/unit3_notes.pdf" target="_blank"><button>Unit 3 Notes</button></a>
+                        <a href="path/to/unit4_notes.pdf" target="_blank"><button>Unit 4 Notes</button></a>
+                        <a href="path/to/unit5_notes.pdf" target="_blank"><button>Unit 5 Notes</button></a>
+                    </div>
+                </div>
+                <div class="unit-section" id="subject3-units" style="display: none;">
+                    <embed src="car.png" type="application/pdf" width="80%" height="800px" />
+                    <div class="download-link">
+                        <a href="car.png" download>Download Syllabus</a>
+                    </div>
+                    <div class="unit-buttons">
+                        <a href="pdfs/Data Base Management System - - Week 0.pdf" target="_blank"><button>Unit 1 Notes</button></a>
+                        <a href="path/to/unit2_notes.pdf" target="_blank"><button>Unit 2 Notes</button></a>
+                        <a href="path/to/unit3_notes.pdf" target="_blank"><button>Unit 3 Notes</button></a>
+                        <a href="path/to/unit4_notes.pdf" target="_blank"><button>Unit 4 Notes</button></a>
+                        <a href="path/to/unit5_notes.pdf" target="_blank"><button>Unit 5 Notes</button></a>
+                    </div>
+                </div>
+                <div class="unit-section" id="subject4-units" style="display: none;">
+                    <embed src="car.png" type="application/pdf" width="80%" height="800px" />
+                    <div class="download-link">
+                        <a href="car.png" download>Download Syllabus</a>
+                    </div>
+                    <div class="unit-buttons">
+                        <a href="pdfs/Data Base Management System - - Week 0.pdf" target="_blank"><button>Unit 1 Notes</button></a>
+                        <a href="path/to/unit2_notes.pdf" target="_blank"><button>Unit 2 Notes</button></a>
+                        <a href="path/to/unit3_notes.pdf" target="_blank"><button>Unit 3 Notes</button></a>
+                        <a href="path/to/unit4_notes.pdf" target="_blank"><button>Unit 4 Notes</button></a>
+                        <a href="path/to/unit5_notes.pdf" target="_blank"><button>Unit 5 Notes</button></a>
+                    </div>
+                </div>
+                <div class="unit-section" id="subject5-units" style="display: none;">
+                    <embed src="car.png" type="application/pdf" width="80%" height="800px" />
+                    <div class="download-link">
+                        <a href="car.png" download>Download Syllabus</a>
+                    </div>
+                    <div class="unit-buttons">
+                        <a href="pdfs/Data Base Management System - - Week 0.pdf" target="_blank"><button>Unit 1 Notes</button></a>
+                        <a href="path/to/unit2_notes.pdf" target="_blank"><button>Unit 2 Notes</button></a>
+                        <a href="path/to/unit3_notes.pdf" target="_blank"><button>Unit 3 Notes</button></a>
+                        <a href="path/to/unit4_notes.pdf" target="_blank"><button>Unit 4 Notes</button></a>
+                        <a href="path/to/unit5_notes.pdf" target="_blank"><button>Unit 5 Notes</button></a>
+                    </div>
+                </div>
+                                                
+            </div>
+            
+            <div class="syllabus-container" id="syllabus-1st-2">
+                <div class="subject-container" id="subjects-1st-2">
+                    <button onclick="showUnits('subject7')">Subject 1</button>
+                    <button onclick="showUnits('subject8')">Subject 2</button>
+                    <button onclick="showUnits('subject9')">Subject 3</button>
+                    <button onclick="showUnits('subject10')">Subject 4</button>
+                    <button onclick="showUnits('subject11')">Subject 5</button>
+                    <!--<button onclick="showUnits('subject48')">Subject 6</button>-->
+                </div>
+            
+                <!-- Unit sections for each subject -->
+                <div class="unit-section" id="subject7-units" style="display: none;">
+                    <embed src="car.png" type="application/pdf" width="80%" height="800px" />
+                    <div class="download-link">
+                        <a href="car.png" download>Download Syllabus</a>
+                    </div>
+                    <div class="unit-buttons">
+                        <a href="path/to/unit1_notes.pdf" target="_blank"><button>Unit 1 Notes</button></a>
+                        <a href="path/to/unit2_notes.pdf" target="_blank"><button>Unit 2 Notes</button></a>
+                        <a href="path/to/unit3_notes.pdf" target="_blank"><button>Unit 3 Notes</button></a>
+                        <a href="path/to/unit4_notes.pdf" target="_blank"><button>Unit 4 Notes</button></a>
+                        <a href="path/to/unit5_notes.pdf" target="_blank"><button>Unit 5 Notes</button></a>
+                    </div>
+                </div>
+            
+                <div class="unit-section" id="subject8-units" style="display: none;">
+                    <embed src="car.png" type="application/pdf" width="80%" height="800px" />
+                    <div class="download-link">
+                        <a href="car.png" download>Download Syllabus</a>
+                    </div>
+                    <div class="unit-buttons">
+                        <a href="path/to/unit1_notes.pdf" target="_blank"><button>Unit 1 Notes</button></a>
+                        <a href="path/to/unit2_notes.pdf" target="_blank"><button>Unit 2 Notes</button></a>
+                        <a href="path/to/unit3_notes.pdf" target="_blank"><button>Unit 3 Notes</button></a>
+                        <a href="path/to/unit4_notes.pdf" target="_blank"><button>Unit 4 Notes</button></a>
+                        <a href="path/to/unit5_notes.pdf" target="_blank"><button>Unit 5 Notes</button></a>
+                    </div>
+                </div>
+            
+                <div class="unit-section" id="subject9-units" style="display: none;">
+                    <embed src="car.png" type="application/pdf" width="80%" height="800px" />
+                    <div class="download-link">
+                        <a href="car.png" download>Download Syllabus</a>
+                    </div>
+                    <div class="unit-buttons">
+                        <a href="path/to/unit1_notes.pdf" target="_blank"><button>Unit 1 Notes</button></a>
+                        <a href="path/to/unit2_notes.pdf" target="_blank"><button>Unit 2 Notes</button></a>
+                        <a href="path/to/unit3_notes.pdf" target="_blank"><button>Unit 3 Notes</button></a>
+                        <a href="path/to/unit4_notes.pdf" target="_blank"><button>Unit 4 Notes</button></a>
+                        <a href="path/to/unit5_notes.pdf" target="_blank"><button>Unit 5 Notes</button></a>
+                    </div>
+                </div>
+            
+                <div class="unit-section" id="subject10-units" style="display: none;">
+                    <embed src="car.png" type="application/pdf" width="80%" height="800px" />
+                    <div class="download-link">
+                        <a href="car.png" download>Download Syllabus</a>
+                    </div>
+                    <div class="unit-buttons">
+                        <a href="path/to/unit1_notes.pdf" target="_blank"><button>Unit 1 Notes</button></a>
+                        <a href="path/to/unit2_notes.pdf" target="_blank"><button>Unit 2 Notes</button></a>
+                        <a href="path/to/unit3_notes.pdf" target="_blank"><button>Unit 3 Notes</button></a>
+                        <a href="path/to/unit4_notes.pdf" target="_blank"><button>Unit 4 Notes</button></a>
+                        <a href="path/to/unit5_notes.pdf" target="_blank"><button>Unit 5 Notes</button></a>
+                    </div>
+                </div>
+            
+                <div class="unit-section" id="subject11-units" style="display: none;">
+                    <embed src="car.png" type="application/pdf" width="80%" height="800px" />
+                    <div class="download-link">
+                        <a href="car.png" download>Download Syllabus</a>
+                    </div>
+                    <div class="unit-buttons">
+                        <a href="path/to/unit1_notes.pdf" target="_blank"><button>Unit 1 Notes</button></a>
+                        <a href="path/to/unit2_notes.pdf" target="_blank"><button>Unit 2 Notes</button></a>
+                        <a href="path/to/unit3_notes.pdf" target="_blank"><button>Unit 3 Notes</button></a>
+                        <a href="path/to/unit4_notes.pdf" target="_blank"><button>Unit 4 Notes</button></a>
+                        <a href="path/to/unit5_notes.pdf" target="_blank"><button>Unit 5 Notes</button></a>
+                    </div>
+                </div>
+            
+                <div class="unit-section" id="subject12-units" style="display: none;">
+                    <embed src="car.png" type="application/pdf" width="80%" height="800px" />
+                    <div class="download-link">
+                        <a href="car.png" download>Download Syllabus</a>
+                    </div>
+                    <div class="unit-buttons">
+                        <a href="path/to/unit1_notes.pdf" target="_blank"><button>Unit 1 Notes</button></a>
+                        <a href="path/to/unit2_notes.pdf" target="_blank"><button>Unit 2 Notes</button></a>
+                        <a href="path/to/unit3_notes.pdf" target="_blank"><button>Unit 3 Notes</button></a>
+                        <a href="path/to/unit4_notes.pdf" target="_blank"><button>Unit 4 Notes</button></a>
+                        <a href="path/to/unit5_notes.pdf" target="_blank"><button>Unit 5 Notes</button></a>
+                    </div>
+                </div>
+            </div>
+            
+            
+           <!-- 2nd Year -->
+           <div class="syllabus-container" id="syllabus-2nd-1">
+            <div class="subject-container" id="subjects-2nd-1">
+                <button onclick="showUnits('subject13')">Subject 1</button>
+                <button onclick="showUnits('subject14')">Subject 2</button>
+                <button onclick="showUnits('subject15')">Subject 3</button>
+                <button onclick="showUnits('subject16')">Subject 4</button>
+                <button onclick="showUnits('subject17')">Subject 5</button>
+                <!--<button onclick="showUnits('subject48')">Subject 6</button>-->
+            </div>
+        
+            <!-- Unit sections for each subject -->
+            <div class="unit-section" id="subject13-units" style="display: none;">
+                <embed src="subject1-syllabus.pdf" type="application/pdf" width="80%" height="800px" />
+                <div class="download-link">
+                    <a href="subject1-syllabus.pdf" download>Download Syllabus</a>
+                </div>
+                <div class="unit-buttons">
+                    <a href="path/to/subject1-unit1.pdf" target="_blank"><button>Unit 1 Notes</button></a>
+                    <a href="path/to/subject1-unit2.pdf" target="_blank"><button>Unit 2 Notes</button></a>
+                    <a href="path/to/subject1-unit3.pdf" target="_blank"><button>Unit 3 Notes</button></a>
+                    <a href="path/to/subject1-unit4.pdf" target="_blank"><button>Unit 4 Notes</button></a>
+                    <a href="path/to/subject1-unit5.pdf" target="_blank"><button>Unit 5 Notes</button></a>
+                </div>
+            </div>
+        
+            <div class="unit-section" id="subject14-units" style="display: none;">
+                <embed src="subject2-syllabus.pdf" type="application/pdf" width="80%" height="800px" />
+                <div class="download-link">
+                    <a href="subject2-syllabus.pdf" download>Download Syllabus</a>
+                </div>
+                <div class="unit-buttons">
+                    <a href="path/to/subject2-unit1.pdf" target="_blank"><button>Unit 1 Notes</button></a>
+                    <a href="path/to/subject2-unit2.pdf" target="_blank"><button>Unit 2 Notes</button></a>
+                    <a href="path/to/subject2-unit3.pdf" target="_blank"><button>Unit 3 Notes</button></a>
+                    <a href="path/to/subject2-unit4.pdf" target="_blank"><button>Unit 4 Notes</button></a>
+                    <a href="path/to/subject2-unit5.pdf" target="_blank"><button>Unit 5 Notes</button></a>
+                </div>
+            </div>
+        
+            <div class="unit-section" id="subject15-units" style="display: none;">
+                <embed src="subject3-syllabus.pdf" type="application/pdf" width="80%" height="800px" />
+                <div class="download-link">
+                    <a href="subject3-syllabus.pdf" download>Download Syllabus</a>
+                </div>
+                <div class="unit-buttons">
+                    <a href="path/to/subject3-unit1.pdf" target="_blank"><button>Unit 1 Notes</button></a>
+                    <a href="path/to/subject3-unit2.pdf" target="_blank"><button>Unit 2 Notes</button></a>
+                    <a href="path/to/subject3-unit3.pdf" target="_blank"><button>Unit 3 Notes</button></a>
+                    <a href="path/to/subject3-unit4.pdf" target="_blank"><button>Unit 4 Notes</button></a>
+                    <a href="path/to/subject3-unit5.pdf" target="_blank"><button>Unit 5 Notes</button></a>
+                </div>
+            </div>
+        
+            <div class="unit-section" id="subject16-units" style="display: none;">
+                <embed src="subject4-syllabus.pdf" type="application/pdf" width="80%" height="800px" />
+                <div class="download-link">
+                    <a href="subject4-syllabus.pdf" download>Download Syllabus</a>
+                </div>
+                <div class="unit-buttons">
+                    <a href="path/to/subject4-unit1.pdf" target="_blank"><button>Unit 1 Notes</button></a>
+                    <a href="path/to/subject4-unit2.pdf" target="_blank"><button>Unit 2 Notes</button></a>
+                    <a href="path/to/subject4-unit3.pdf" target="_blank"><button>Unit 3 Notes</button></a>
+                    <a href="path/to/subject4-unit4.pdf" target="_blank"><button>Unit 4 Notes</button></a>
+                    <a href="path/to/subject4-unit5.pdf" target="_blank"><button>Unit 5 Notes</button></a>
+                </div>
+            </div>
+        
+            <div class="unit-section" id="subject17-units" style="display: none;">
+                <embed src="subject5-syllabus.pdf" type="application/pdf" width="80%" height="800px" />
+                <div class="download-link">
+                    <a href="subject5-syllabus.pdf" download>Download Syllabus</a>
+                </div>
+                <div class="unit-buttons">
+                    <a href="path/to/subject5-unit1.pdf" target="_blank"><button>Unit 1 Notes</button></a>
+                    <a href="path/to/subject5-unit2.pdf" target="_blank"><button>Unit 2 Notes</button></a>
+                    <a href="path/to/subject5-unit3.pdf" target="_blank"><button>Unit 3 Notes</button></a>
+                    <a href="path/to/subject5-unit4.pdf" target="_blank"><button>Unit 4 Notes</button></a>
+                    <a href="path/to/subject5-unit5.pdf" target="_blank"><button>Unit 5 Notes</button></a>
+                </div>
+            </div>
+        
+            <div class="unit-section" id="subject18-units" style="display: none;">
+                <embed src="subject6-syllabus.pdf" type="application/pdf" width="80%" height="800px" />
+                <div class="download-link">
+                    <a href="subject6-syllabus.pdf" download>Download Syllabus</a>
+                </div>
+                <div class="unit-buttons">
+                    <a href="path/to/subject6-unit1.pdf" target="_blank"><button>Unit 1 Notes</button></a>
+                    <a href="path/to/subject6-unit2.pdf" target="_blank"><button>Unit 2 Notes</button></a>
+                    <a href="path/to/subject6-unit3.pdf" target="_blank"><button>Unit 3 Notes</button></a>
+                    <a href="path/to/subject6-unit4.pdf" target="_blank"><button>Unit 4 Notes</button></a>
+                    <a href="path/to/subject6-unit5.pdf" target="_blank"><button>Unit 5 Notes</button></a>
+                </div>
+            </div>
+        </div>
+        
+<div class="syllabus-container" id="syllabus-2nd-2">
+    <div class="subject-container" id="subjects-2nd-2">
+        <button onclick="showUnits('subject19')">Subject 1</button>
+        <button onclick="showUnits('subject20')">Subject 2</button>
+        <button onclick="showUnits('subject21')">Subject 3</button>
+        <button onclick="showUnits('subject22')">Subject 4</button>
+        <button onclick="showUnits('subject23')">Subject 5</button>
+        <!--<button onclick="showUnits('subject48')">Subject 6</button>-->
+    </div>
+
+    <!-- Unit sections for each subject -->
+    <div class="unit-section" id="subject19-units" style="display: none;">
+        <embed src="subject1-syllabus.pdf" type="application/pdf" width="80%" height="800px" />
+        <div class="download-link">
+            <a href="subject1-syllabus.pdf" download>Download Syllabus</a>
+        </div>
+        <div class="unit-buttons">
+            <a href="pdfs/Data Base Management System - - Week 0.pdf" target="_blank"><button>Unit 1 Notes</button></a>
+            <a href="path/to/subject1-unit2.pdf" target="_blank"><button>Unit 2 Notes</button></a>
+            <a href="path/to/subject1-unit3.pdf" target="_blank"><button>Unit 3 Notes</button></a>
+            <a href="path/to/subject1-unit4.pdf" target="_blank"><button>Unit 4 Notes</button></a>
+            <a href="path/to/subject1-unit5.pdf" target="_blank"><button>Unit 5 Notes</button></a>
+        </div>
+    </div>
+
+    <div class="unit-section" id="subject20-units" style="display: none;">
+        <embed src="subject2-syllabus.pdf" type="application/pdf" width="80%" height="800px" />
+        <div class="download-link">
+            <a href="subject2-syllabus.pdf" download>Download Syllabus</a>
+        </div>
+        <div class="unit-buttons">
+            <a href="path/to/subject2-unit1.pdf" target="_blank"><button>Unit 1 Notes</button></a>
+            <a href="path/to/subject2-unit2.pdf" target="_blank"><button>Unit 2 Notes</button></a>
+            <a href="path/to/subject2-unit3.pdf" target="_blank"><button>Unit 3 Notes</button></a>
+            <a href="path/to/subject2-unit4.pdf" target="_blank"><button>Unit 4 Notes</button></a>
+            <a href="path/to/subject2-unit5.pdf" target="_blank"><button>Unit 5 Notes</button></a>
+        </div>
+    </div>
+
+    <div class="unit-section" id="subject21-units" style="display: none;">
+        <embed src="subject3-syllabus.pdf" type="application/pdf" width="80%" height="800px" />
+        <div class="download-link">
+            <a href="subject3-syllabus.pdf" download>Download Syllabus</a>
+        </div>
+        <div class="unit-buttons">
+            <a href="path/to/subject3-unit1.pdf" target="_blank"><button>Unit 1 Notes</button></a>
+            <a href="path/to/subject3-unit2.pdf" target="_blank"><button>Unit 2 Notes</button></a>
+            <a href="path/to/subject3-unit3.pdf" target="_blank"><button>Unit 3 Notes</button></a>
+            <a href="path/to/subject3-unit4.pdf" target="_blank"><button>Unit 4 Notes</button></a>
+            <a href="path/to/subject3-unit5.pdf" target="_blank"><button>Unit 5 Notes</button></a>
+        </div>
+    </div>
+
+    <div class="unit-section" id="subject22-units" style="display: none;">
+        <embed src="subject4-syllabus.pdf" type="application/pdf" width="80%" height="800px" />
+        <div class="download-link">
+            <a href="subject4-syllabus.pdf" download>Download Syllabus</a>
+        </div>
+        <div class="unit-buttons">
+            <a href="path/to/subject4-unit1.pdf" target="_blank"><button>Unit 1 Notes</button></a>
+            <a href="path/to/subject4-unit2.pdf" target="_blank"><button>Unit 2 Notes</button></a>
+            <a href="path/to/subject4-unit3.pdf" target="_blank"><button>Unit 3 Notes</button></a>
+            <a href="path/to/subject4-unit4.pdf" target="_blank"><button>Unit 4 Notes</button></a>
+            <a href="path/to/subject4-unit5.pdf" target="_blank"><button>Unit 5 Notes</button></a>
+        </div>
+    </div>
+
+    <div class="unit-section" id="subject23-units" style="display: none;">
+        <embed src="subject5-syllabus.pdf" type="application/pdf" width="80%" height="800px" />
+        <div class="download-link">
+            <a href="subject5-syllabus.pdf" download>Download Syllabus</a>
+        </div>
+        <div class="unit-buttons">
+            <a href="path/to/subject5-unit1.pdf" target="_blank"><button>Unit 1 Notes</button></a>
+            <a href="path/to/subject5-unit2.pdf" target="_blank"><button>Unit 2 Notes</button></a>
+            <a href="path/to/subject5-unit3.pdf" target="_blank"><button>Unit 3 Notes</button></a>
+            <a href="path/to/subject5-unit4.pdf" target="_blank"><button>Unit 4 Notes</button></a>
+            <a href="path/to/subject5-unit5.pdf" target="_blank"><button>Unit 5 Notes</button></a>
+        </div>
+    </div>
+
+    <div class="unit-section" id="subject24-units" style="display: none;">
+        <embed src="subject6-syllabus.pdf" type="application/pdf" width="80%" height="800px" />
+        <div class="download-link">
+            <a href="subject6-syllabus.pdf" download>Download Syllabus</a>
+        </div>
+        <div class="unit-buttons">
+            <a href="path/to/subject6-unit1.pdf" target="_blank"><button>Unit 1 Notes</button></a>
+            <a href="path/to/subject6-unit2.pdf" target="_blank"><button>Unit 2 Notes</button></a>
+            <a href="path/to/subject6-unit3.pdf" target="_blank"><button>Unit 3 Notes</button></a>
+            <a href="path/to/subject6-unit4.pdf" target="_blank"><button>Unit 4 Notes</button></a>
+            <a href="path/to/subject6-unit5.pdf" target="_blank"><button>Unit 5 Notes</button></a>
+        </div>
+    </div>
+</div>
+
+<!-- 3rd Year -->
+<div class="syllabus-container" id="syllabus-3rd-1">
+    <div class="subject-container" id="subjects-3rd-1">
+        <button onclick="showUnits('subject25')">Subject 1</button>
+        <button onclick="showUnits('subject26')">Subject 2</button>
+        <button onclick="showUnits('subject27')">Subject 3</button>
+        <button onclick="showUnits('subject28')">Subject 4</button>
+        <button onclick="showUnits('subject29')">Subject 5</button>
+        <!--<button onclick="showUnits('subject48')">Subject 6</button>-->
+    </div>
+
+    <!-- Unit sections for each subject -->
+    <div class="unit-section" id="subject25-units" style="display: none;">
+        <embed src="subject1-syllabus.pdf" type="application/pdf" width="80%" height="800px" />
+        <div class="download-link">
+            <a href="subject1-syllabus.pdf" download>Download Syllabus</a>
+        </div>
+        <div class="unit-buttons">
+            <a href="path/to/subject1-unit1.pdf" target="_blank"><button>Unit 1 Notes</button></a>
+            <a href="path/to/subject1-unit2.pdf" target="_blank"><button>Unit 2 Notes</button></a>
+            <a href="path/to/subject1-unit3.pdf" target="_blank"><button>Unit 3 Notes</button></a>
+            <a href="path/to/subject1-unit4.pdf" target="_blank"><button>Unit 4 Notes</button></a>
+            <a href="path/to/subject1-unit5.pdf" target="_blank"><button>Unit 5 Notes</button></a>
+        </div>
+    </div>
+
+    <div class="unit-section" id="subject26-units" style="display: none;">
+        <embed src="subject2-syllabus.pdf" type="application/pdf" width="80%" height="800px" />
+        <div class="download-link">
+            <a href="subject2-syllabus.pdf" download>Download Syllabus</a>
+        </div>
+        <div class="unit-buttons">
+            <a href="path/to/subject2-unit1.pdf" target="_blank"><button>Unit 1 Notes</button></a>
+            <a href="path/to/subject2-unit2.pdf" target="_blank"><button>Unit 2 Notes</button></a>
+            <a href="path/to/subject2-unit3.pdf" target="_blank"><button>Unit 3 Notes</button></a>
+            <a href="path/to/subject2-unit4.pdf" target="_blank"><button>Unit 4 Notes</button></a>
+            <a href="path/to/subject2-unit5.pdf" target="_blank"><button>Unit 5 Notes</button></a>
+        </div>
+    </div>
+
+    <div class="unit-section" id="subject27-units" style="display: none;">
+        <embed src="subject3-syllabus.pdf" type="application/pdf" width="80%" height="800px" />
+        <div class="download-link">
+            <a href="subject3-syllabus.pdf" download>Download Syllabus</a>
+        </div>
+        <div class="unit-buttons">
+            <a href="path/to/subject3-unit1.pdf" target="_blank"><button>Unit 1 Notes</button></a>
+            <a href="path/to/subject3-unit2.pdf" target="_blank"><button>Unit 2 Notes</button></a>
+            <a href="path/to/subject3-unit3.pdf" target="_blank"><button>Unit 3 Notes</button></a>
+            <a href="path/to/subject3-unit4.pdf" target="_blank"><button>Unit 4 Notes</button></a>
+            <a href="path/to/subject3-unit5.pdf" target="_blank"><button>Unit 5 Notes</button></a>
+        </div>
+    </div>
+
+    <div class="unit-section" id="subject28-units" style="display: none;">
+        <embed src="subject4-syllabus.pdf" type="application/pdf" width="80%" height="800px" />
+        <div class="download-link">
+            <a href="subject4-syllabus.pdf" download>Download Syllabus</a>
+        </div>
+        <div class="unit-buttons">
+            <a href="path/to/subject4-unit1.pdf" target="_blank"><button>Unit 1 Notes</button></a>
+            <a href="path/to/subject4-unit2.pdf" target="_blank"><button>Unit 2 Notes</button></a>
+            <a href="path/to/subject4-unit3.pdf" target="_blank"><button>Unit 3 Notes</button></a>
+            <a href="path/to/subject4-unit4.pdf" target="_blank"><button>Unit 4 Notes</button></a>
+            <a href="path/to/subject4-unit5.pdf" target="_blank"><button>Unit 5 Notes</button></a>
+        </div>
+    </div>
+
+    <div class="unit-section" id="subject29-units" style="display: none;">
+        <embed src="subject5-syllabus.pdf" type="application/pdf" width="80%" height="800px" />
+        <div class="download-link">
+            <a href="subject5-syllabus.pdf" download>Download Syllabus</a>
+        </div>
+        <div class="unit-buttons">
+            <a href="path/to/subject5-unit1.pdf" target="_blank"><button>Unit 1 Notes</button></a>
+            <a href="path/to/subject5-unit2.pdf" target="_blank"><button>Unit 2 Notes</button></a>
+            <a href="path/to/subject5-unit3.pdf" target="_blank"><button>Unit 3 Notes</button></a>
+            <a href="path/to/subject5-unit4.pdf" target="_blank"><button>Unit 4 Notes</button></a>
+            <a href="path/to/subject5-unit5.pdf" target="_blank"><button>Unit 5 Notes</button></a>
+        </div>
+    </div>
+
+    <div class="unit-section" id="subject30-units" style="display: none;">
+        <embed src="subject6-syllabus.pdf" type="application/pdf" width="80%" height="800px" />
+        <div class="download-link">
+            <a href="subject6-syllabus.pdf" download>Download Syllabus</a>
+        </div>
+        <div class="unit-buttons">
+            <a href="path/to/subject6-unit1.pdf" target="_blank"><button>Unit 1 Notes</button></a>
+            <a href="path/to/subject6-unit2.pdf" target="_blank"><button>Unit 2 Notes</button></a>
+            <a href="path/to/subject6-unit3.pdf" target="_blank"><button>Unit 3 Notes</button></a>
+            <a href="path/to/subject6-unit4.pdf" target="_blank"><button>Unit 4 Notes</button></a>
+            <a href="path/to/subject6-unit5.pdf" target="_blank"><button>Unit 5 Notes</button></a>
+        </div>
+    </div>
+</div>
+
+<div class="syllabus-container" id="syllabus-3rd-2">
+    <div class="subject-container" id="subjects-3rd-2">
+        <button onclick="showUnits('subject31')">Subject 1</button>
+        <button onclick="showUnits('subject32')">Subject 2</button>
+        <button onclick="showUnits('subject33')">Subject 3</button>
+        <button onclick="showUnits('subject34')">Subject 4</button>
+        <button onclick="showUnits('subject35')">Subject 5</button>
+        <!--<button onclick="showUnits('subject48')">Subject 6</button>-->
+    </div>
+
+    <!-- Unit sections for each subject -->
+    <div class="unit-section" id="subject31-units" style="display: none;">
+        <embed src="subject1-syllabus.pdf" type="application/pdf" width="80%" height="800px" />
+        <div class="download-link">
+            <a href="subject1-syllabus.pdf" download>Download Syllabus</a>
+        </div>
+        <div class="unit-buttons">
+            <a href="path/to/subject1-unit1.pdf" target="_blank"><button>Unit 1 Notes</button></a>
+            <a href="path/to/subject1-unit2.pdf" target="_blank"><button>Unit 2 Notes</button></a>
+            <a href="path/to/subject1-unit3.pdf" target="_blank"><button>Unit 3 Notes</button></a>
+            <a href="path/to/subject1-unit4.pdf" target="_blank"><button>Unit 4 Notes</button></a>
+            <a href="path/to/subject1-unit5.pdf" target="_blank"><button>Unit 5 Notes</button></a>
+        </div>
+    </div>
+
+    <div class="unit-section" id="subject32-units" style="display: none;">
+        <embed src="subject2-syllabus.pdf" type="application/pdf" width="80%" height="800px" />
+        <div class="download-link">
+            <a href="subject2-syllabus.pdf" download>Download Syllabus</a>
+        </div>
+        <div class="unit-buttons">
+            <a href="path/to/subject2-unit1.pdf" target="_blank"><button>Unit 1 Notes</button></a>
+            <a href="path/to/subject2-unit2.pdf" target="_blank"><button>Unit 2 Notes</button></a>
+            <a href="path/to/subject2-unit3.pdf" target="_blank"><button>Unit 3 Notes</button></a>
+            <a href="path/to/subject2-unit4.pdf" target="_blank"><button>Unit 4 Notes</button></a>
+            <a href="path/to/subject2-unit5.pdf" target="_blank"><button>Unit 5 Notes</button></a>
+        </div>
+    </div>
+
+    <div class="unit-section" id="subject33-units" style="display: none;">
+        <embed src="subject3-syllabus.pdf" type="application/pdf" width="80%" height="800px" />
+        <div class="download-link">
+            <a href="subject3-syllabus.pdf" download>Download Syllabus</a>
+        </div>
+        <div class="unit-buttons">
+            <a href="path/to/subject3-unit1.pdf" target="_blank"><button>Unit 1 Notes</button></a>
+            <a href="path/to/subject3-unit2.pdf" target="_blank"><button>Unit 2 Notes</button></a>
+            <a href="path/to/subject3-unit3.pdf" target="_blank"><button>Unit 3 Notes</button></a>
+            <a href="path/to/subject3-unit4.pdf" target="_blank"><button>Unit 4 Notes</button></a>
+            <a href="path/to/subject3-unit5.pdf" target="_blank"><button>Unit 5 Notes</button></a>
+        </div>
+    </div>
+
+    <div class="unit-section" id="subject34-units" style="display: none;">
+        <embed src="subject4-syllabus.pdf" type="application/pdf" width="80%" height="800px" />
+        <div class="download-link">
+            <a href="subject4-syllabus.pdf" download>Download Syllabus</a>
+        </div>
+        <div class="unit-buttons">
+            <a href="path/to/subject4-unit1.pdf" target="_blank"><button>Unit 1 Notes</button></a>
+            <a href="path/to/subject4-unit2.pdf" target="_blank"><button>Unit 2 Notes</button></a>
+            <a href="path/to/subject4-unit3.pdf" target="_blank"><button>Unit 3 Notes</button></a>
+            <a href="path/to/subject4-unit4.pdf" target="_blank"><button>Unit 4 Notes</button></a>
+            <a href="path/to/subject4-unit5.pdf" target="_blank"><button>Unit 5 Notes</button></a>
+        </div>
+    </div>
+
+    <div class="unit-section" id="subject35-units" style="display: none;">
+        <embed src="subject5-syllabus.pdf" type="application/pdf" width="80%" height="800px" />
+        <div class="download-link">
+            <a href="subject5-syllabus.pdf" download>Download Syllabus</a>
+        </div>
+        <div class="unit-buttons">
+            <a href="path/to/subject5-unit1.pdf" target="_blank"><button>Unit 1 Notes</button></a>
+            <a href="path/to/subject5-unit2.pdf" target="_blank"><button>Unit 2 Notes</button></a>
+            <a href="path/to/subject5-unit3.pdf" target="_blank"><button>Unit 3 Notes</button></a>
+            <a href="path/to/subject5-unit4.pdf" target="_blank"><button>Unit 4 Notes</button></a>
+            <a href="path/to/subject5-unit5.pdf" target="_blank"><button>Unit 5 Notes</button></a>
+        </div>
+    </div>
+
+    <div class="unit-section" id="subject36-units" style="display: none;">
+        <embed src="subject6-syllabus.pdf" type="application/pdf" width="80%" height="800px" />
+        <div class="download-link">
+            <a href="subject6-syllabus.pdf" download>Download Syllabus</a>
+        </div>
+        <div class="unit-buttons">
+            <a href="path/to/subject6-unit1.pdf" target="_blank"><button>Unit 1 Notes</button></a>
+            <a href="path/to/subject6-unit2.pdf" target="_blank"><button>Unit 2 Notes</button></a>
+            <a href="path/to/subject6-unit3.pdf" target="_blank"><button>Unit 3 Notes</button></a>
+            <a href="path/to/subject6-unit4.pdf" target="_blank"><button>Unit 4 Notes</button></a>
+            <a href="path/to/subject6-unit5.pdf" target="_blank"><button>Unit 5 Notes</button></a>
+        </div>
+    </div>
+</div>
+
+
+<!-- 4th Year -->
+<div class="syllabus-container" id="syllabus-4th-1">
+    <div class="subject-container" id="subjects-4th-1">
+        <button onclick="showUnits('subject37')">Subject 1</button>
+        <button onclick="showUnits('subject38')">Subject 2</button>
+        <button onclick="showUnits('subject39')">Subject 3</button>
+        <button onclick="showUnits('subject40')">Subject 4</button>
+        <button onclick="showUnits('subject41')">Subject 5</button>
+        <!--<button onclick="showUnits('subject48')">Subject 6</button>-->
+    </div>
+
+    <!-- Unit sections for each subject -->
+    <div class="unit-section" id="subject37-units" style="display: none;">
+        <embed src="subject1-syllabus.pdf" type="application/pdf" width="80%" height="800px" />
+        <div class="download-link">
+            <a href="subject1-syllabus.pdf" download>Download Syllabus</a>
+        </div>
+        <div class="unit-buttons">
+            <a href="path/to/subject1-unit1.pdf" target="_blank"><button>Unit 1 Notes</button></a>
+            <a href="path/to/subject1-unit2.pdf" target="_blank"><button>Unit 2 Notes</button></a>
+            <a href="path/to/subject1-unit3.pdf" target="_blank"><button>Unit 3 Notes</button></a>
+            <a href="path/to/subject1-unit4.pdf" target="_blank"><button>Unit 4 Notes</button></a>
+            <a href="path/to/subject1-unit5.pdf" target="_blank"><button>Unit 5 Notes</button></a>
+        </div>
+    </div>
+
+    <div class="unit-section" id="subject38-units" style="display: none;">
+        <embed src="subject2-syllabus.pdf" type="application/pdf" width="80%" height="800px" />
+        <div class="download-link">
+            <a href="subject2-syllabus.pdf" download>Download Syllabus</a>
+        </div>
+        <div class="unit-buttons">
+            <a href="path/to/subject2-unit1.pdf" target="_blank"><button>Unit 1 Notes</button></a>
+            <a href="path/to/subject2-unit2.pdf" target="_blank"><button>Unit 2 Notes</button></a>
+            <a href="path/to/subject2-unit3.pdf" target="_blank"><button>Unit 3 Notes</button></a>
+            <a href="path/to/subject2-unit4.pdf" target="_blank"><button>Unit 4 Notes</button></a>
+            <a href="path/to/subject2-unit5.pdf" target="_blank"><button>Unit 5 Notes</button></a>
+        </div>
+    </div>
+
+    <div class="unit-section" id="subject39-units" style="display: none;">
+        <embed src="subject3-syllabus.pdf" type="application/pdf" width="80%" height="800px" />
+        <div class="download-link">
+            <a href="subject3-syllabus.pdf" download>Download Syllabus</a>
+        </div>
+        <div class="unit-buttons">
+            <a href="path/to/subject3-unit1.pdf" target="_blank"><button>Unit 1 Notes</button></a>
+            <a href="path/to/subject3-unit2.pdf" target="_blank"><button>Unit 2 Notes</button></a>
+            <a href="path/to/subject3-unit3.pdf" target="_blank"><button>Unit 3 Notes</button></a>
+            <a href="path/to/subject3-unit4.pdf" target="_blank"><button>Unit 4 Notes</button></a>
+            <a href="path/to/subject3-unit5.pdf" target="_blank"><button>Unit 5 Notes</button></a>
+        </div>
+    </div>
+
+    <div class="unit-section" id="subject40-units" style="display: none;">
+        <embed src="subject4-syllabus.pdf" type="application/pdf" width="80%" height="800px" />
+        <div class="download-link">
+            <a href="subject4-syllabus.pdf" download>Download Syllabus</a>
+        </div>
+        <div class="unit-buttons">
+            <a href="path/to/subject4-unit1.pdf" target="_blank"><button>Unit 1 Notes</button></a>
+            <a href="path/to/subject4-unit2.pdf" target="_blank"><button>Unit 2 Notes</button></a>
+            <a href="path/to/subject4-unit3.pdf" target="_blank"><button>Unit 3 Notes</button></a>
+            <a href="path/to/subject4-unit4.pdf" target="_blank"><button>Unit 4 Notes</button></a>
+            <a href="path/to/subject4-unit5.pdf" target="_blank"><button>Unit 5 Notes</button></a>
+        </div>
+    </div>
+
+    <div class="unit-section" id="subject41-units" style="display: none;">
+        <embed src="subject5-syllabus.pdf" type="application/pdf" width="80%" height="800px" />
+        <div class="download-link">
+            <a href="subject5-syllabus.pdf" download>Download Syllabus</a>
+        </div>
+        <div class="unit-buttons">
+            <a href="path/to/subject5-unit1.pdf" target="_blank"><button>Unit 1 Notes</button></a>
+            <a href="path/to/subject5-unit2.pdf" target="_blank"><button>Unit 2 Notes</button></a>
+            <a href="path/to/subject5-unit3.pdf" target="_blank"><button>Unit 3 Notes</button></a>
+            <a href="path/to/subject5-unit4.pdf" target="_blank"><button>Unit 4 Notes</button></a>
+            <a href="path/to/subject5-unit5.pdf" target="_blank"><button>Unit 5 Notes</button></a>
+        </div>
+    </div>
+
+    <div class="unit-section" id="subject42-units" style="display: none;">
+        <embed src="subject6-syllabus.pdf" type="application/pdf" width="80%" height="800px" />
+        <div class="download-link">
+            <a href="subject6-syllabus.pdf" download>Download Syllabus</a>
+        </div>
+        <div class="unit-buttons">
+            <a href="path/to/subject6-unit1.pdf" target="_blank"><button>Unit 1 Notes</button></a>
+            <a href="path/to/subject6-unit2.pdf" target="_blank"><button>Unit 2 Notes</button></a>
+            <a href="path/to/subject6-unit3.pdf" target="_blank"><button>Unit 3 Notes</button></a>
+            <a href="path/to/subject6-unit4.pdf" target="_blank"><button>Unit 4 Notes</button></a>
+            <a href="path/to/subject6-unit5.pdf" target="_blank"><button>Unit 5 Notes</button></a>
+        </div>
+    </div>
+</div>
+<div class="syllabus-container" id="syllabus-4th-2">
+    <div class="subject-container" id="subjects-4th-2">
+        <button onclick="showUnits('subject43')">Subject 1</button>
+        <button onclick="showUnits('subject44')">Subject 2</button>
+        <button onclick="showUnits('subject45')">Subject 3</button>
+        <button onclick="showUnits('subject46')">Subject 4</button>
+        <button onclick="showUnits('subject47')">Subject 5</button>
+        <!--<button onclick="showUnits('subject48')">Subject 6</button>-->
+    </div>
+
+    <!-- Unit sections for each subject -->
+    <div class="unit-section" id="subject43-units" style="display: none;">
+        <embed src="subject1-syllabus.pdf" type="application/pdf" width="80%" height="800px" />
+        <div class="download-link">
+            <a href="subject1-syllabus.pdf" download>Download Syllabus</a>
+        </div>
+        <div class="unit-buttons">
+            <a href="path/to/subject1-unit1.pdf" target="_blank"><button>Unit 1 Notes</button></a>
+            <a href="path/to/subject1-unit2.pdf" target="_blank"><button>Unit 2 Notes</button></a>
+            <a href="path/to/subject1-unit3.pdf" target="_blank"><button>Unit 3 Notes</button></a>
+            <a href="path/to/subject1-unit4.pdf" target="_blank"><button>Unit 4 Notes</button></a>
+            <a href="path/to/subject1-unit5.pdf" target="_blank"><button>Unit 5 Notes</button></a>
+        </div>
+    </div>
+
+    <div class="unit-section" id="subject44-units" style="display: none;">
+        <embed src="subject2-syllabus.pdf" type="application/pdf" width="80%" height="800px" />
+        <div class="download-link">
+            <a href="subject2-syllabus.pdf" download>Download Syllabus</a>
+        </div>
+        <div class="unit-buttons">
+            <a href="path/to/subject2-unit1.pdf" target="_blank"><button>Unit 1 Notes</button></a>
+            <a href="path/to/subject2-unit2.pdf" target="_blank"><button>Unit 2 Notes</button></a>
+            <a href="path/to/subject2-unit3.pdf" target="_blank"><button>Unit 3 Notes</button></a>
+            <a href="path/to/subject2-unit4.pdf" target="_blank"><button>Unit 4 Notes</button></a>
+            <a href="path/to/subject2-unit5.pdf" target="_blank"><button>Unit 5 Notes</button></a>
+        </div>
+    </div>
+
+    <div class="unit-section" id="subject45-units" style="display: none;">
+        <embed src="subject3-syllabus.pdf" type="application/pdf" width="80%" height="800px" />
+        <div class="download-link">
+            <a href="subject3-syllabus.pdf" download>Download Syllabus</a>
+        </div>
+        <div class="unit-buttons">
+            <a href="path/to/subject3-unit1.pdf" target="_blank"><button>Unit 1 Notes</button></a>
+            <a href="path/to/subject3-unit2.pdf" target="_blank"><button>Unit 2 Notes</button></a>
+            <a href="path/to/subject3-unit3.pdf" target="_blank"><button>Unit 3 Notes</button></a>
+            <a href="path/to/subject3-unit4.pdf" target="_blank"><button>Unit 4 Notes</button></a>
+            <a href="path/to/subject3-unit5.pdf" target="_blank"><button>Unit 5 Notes</button></a>
+        </div>
+    </div>
+
+    <div class="unit-section" id="subject46-units" style="display: none;">
+        <embed src="subject4-syllabus.pdf" type="application/pdf" width="80%" height="800px" />
+        <div class="download-link">
+            <a href="subject4-syllabus.pdf" download>Download Syllabus</a>
+        </div>
+        <div class="unit-buttons">
+            <a href="path/to/subject4-unit1.pdf" target="_blank"><button>Unit 1 Notes</button></a>
+            <a href="path/to/subject4-unit2.pdf" target="_blank"><button>Unit 2 Notes</button></a>
+            <a href="path/to/subject4-unit3.pdf" target="_blank"><button>Unit 3 Notes</button></a>
+            <a href="path/to/subject4-unit4.pdf" target="_blank"><button>Unit 4 Notes</button></a>
+            <a href="path/to/subject4-unit5.pdf" target="_blank"><button>Unit 5 Notes</button></a>
+        </div>
+    </div>
+
+    <div class="unit-section" id="subject47-units" style="display: none;">
+        <embed src="subject5-syllabus.pdf" type="application/pdf" width="80%" height="800px" />
+        <div class="download-link">
+            <a href="subject5-syllabus.pdf" download>Download Syllabus</a>
+        </div>
+        <div class="unit-buttons">
+            <a href="path/to/subject5-unit1.pdf" target="_blank"><button>Unit 1 Notes</button></a>
+            <a href="path/to/subject5-unit2.pdf" target="_blank"><button>Unit 2 Notes</button></a>
+            <a href="path/to/subject5-unit3.pdf" target="_blank"><button>Unit 3 Notes</button></a>
+            <a href="path/to/subject5-unit4.pdf" target="_blank"><button>Unit 4 Notes</button></a>
+            <a href="path/to/subject5-unit5.pdf" target="_blank"><button>Unit 5 Notes</button></a>
+        </div>
+    </div>
+    <div class="unit-section" id="subject48-units" style="display: none;">
+        <embed src="subject6-syllabus.pdf" type="application/pdf" width="80%" height="800px" />
+        <div class="download-link">
+            <a href="subject6-syllabus.pdf" download>Download Syllabus</a>
+        </div>
+        <div class="unit-buttons">
+            <a href="path/to/subject6-unit1.pdf" target="_blank"><button>Unit 1 Notes</button></a>
+            <a href="path/to/subject6-unit2.pdf" target="_blank"><button>Unit 2 Notes</button></a>
+            <a href="path/to/subject6-unit3.pdf" target="_blank"><button>Unit 3 Notes</button></a>
+            <a href="path/to/subject6-unit4.pdf" target="_blank"><button>Unit 4 Notes</button></a>
+            <a href="path/to/subject6-unit5.pdf" target="_blank"><button>Unit 5 Notes</button></a>
+        </div>
+
+    </div>
+</div>
+
+        </section>
+    </main>
+
+    <script>
+        function showDetails(year) {
+            const detailsDiv = document.getElementById('details');
+            const semesterContainer = document.getElementById('semester-selection');
+            let detailsContent = '';
+            let semesterButtons = '';
+    
+            switch (year) {
+                case '1st':
+                    detailsContent = '<h2>  </h2><h3>Select a semester to view details.</h3>';
+                    semesterButtons = `
+                        <button onclick="showSemesterDetails('1st', '1')">Sem 1</button>
+                        <button onclick="showSemesterDetails('1st', '2')">Sem 2</button>`;
+                    break;
+                case '2nd':
+                    detailsContent = '<h2>2nd Year Details</h2><p>Select a semester to view details.</p>';
+                    semesterButtons = `
+                        <button onclick="showSemesterDetails('2nd', '1')">Sem 1</button>
+                        <button onclick="showSemesterDetails('2nd', '2')">Sem 2</button>`;
+                    break;
+                case '3rd':
+                    detailsContent = '<h2>3rd Year Details</h2><p>Select a semester to view details.</p>';
+                    semesterButtons = `
+                        <button onclick="showSemesterDetails('3rd', '1')">Sem 1</button>
+                        <button onclick="showSemesterDetails('3rd', '2')">Sem 2</button>`;
+                    break;
+                case '4th':
+                    detailsContent = '<h2>4th Year Details</h2><p>Select a semester to view details.</p>';
+                    semesterButtons = `
+                        <button onclick="showSemesterDetails('4th', '1')">Sem 1</button>
+                        <button onclick="showSemesterDetails('4th', '2')">Sem 2</button>`;
+                    break;
+            }
+    
+            detailsDiv.innerHTML = detailsContent;
+            semesterContainer.innerHTML = semesterButtons;
+    
+            // Remove 'active' class from all containers
+            document.querySelectorAll('.syllabus-container').forEach(div => div.classList.remove('active'));
+            document.querySelectorAll('.subject-container').forEach(div => div.classList.remove('active'));
+        }
+    
+        function showSemesterDetails(year, semester) {
+            console.log(`Year: ${year}, Semester: ${semester}`);
+            const syllabusId = `syllabus-${year}-${semester}`;
+            const subjectId = `subjects-${year}-${semester}`;
+            console.log(`Syllabus ID: ${syllabusId}, Subject ID: ${subjectId}`);
+            
+            // Remove 'active' class from all containers
+            document.querySelectorAll('.syllabus-container').forEach(div => div.classList.remove('active'));
+            document.querySelectorAll('.subject-container').forEach(div => div.classList.remove('active'));
+            
+            // Add 'active' class to the selected syllabus and subject containers
+            const syllabusElement = document.getElementById(syllabusId);
+            const subjectElement = document.getElementById(subjectId);
+            
+            if (syllabusElement) syllabusElement.classList.add('active');
+            if (subjectElement) subjectElement.classList.add('active');
+        }
+    
+        function showUnits(subjectId) {
+            // Hide all unit sections
+            const unitSections = document.querySelectorAll('.unit-section');
+            unitSections.forEach(section => section.style.display = 'none');
+            
+            // Show the selected unit section
+            const selectedSection = document.getElementById(subjectId + '-units');
+            if (selectedSection) {
+                selectedSection.style.display = 'block';
+            }
+        }
+    </script>
+    
+    
+</body>
+</html>

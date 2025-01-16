@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Material</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            background-color: #c0d1c1; /* Optional background color */
+        }
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+        .logo {
+            width: 50px; /* Adjust the size as needed */
+            height: auto;
+            margin-right: 10px; /* Spacing between logo and name */
+        }
+        .website-name {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+        }
+        .container {
+            padding: 20px;
+        }
+        .button-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .semester-container {
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .button-container button, .semester-container button {
+            background-color: #7ea0eb;
+            color: white;
+            border: none;
+            padding: 15px 25px;
+            margin: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 15px;
+            flex: 1 1 175px;
+            text-align: center;
+        }
+        .button-container button:hover, .semester-container button:hover {
+            background-color: #45a049;
+        }
+        .details-container {
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        .syllabus-image {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .download-link {
+            display: block;
+            text-align: center;
+            margin-top: 10px;
+        }
+        .download-link a {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .download-link a:hover {
+            background-color: #45a049;
+        }
+        .syllabus-container {
+            display: none;
+        }
+        .syllabus-container.active {
+            display: block;
+        }
+        .subject-container {
+            display: none;
+            margin-top: 20px;
+            text-align: center;
+        }
+        .subject-container button {
+            background-color: #f0ad4e;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            border-radius: 5px;
+        }
+        .subject-container button:hover {
+            background-color: #ec971f;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="Krishna_University-logo-transparent-1.png" alt="Website Logo" class="logo" />
+            <span class="website-name">KU Study Material</span>
+        </div>
+    </header>
+    
+    <main class="container">
+        <section class="button-container">
+            <button onclick="showDetails('1st')">1st Year</button>
+            <button onclick="showDetails('2nd')">2nd Year</button>
+            <button onclick="showDetails('3rd')">3rd Year</button>
+            <button onclick="showDetails('4th')">4th Year</button>
+        </section>
+        
+        <section class="semester-container" id="semester-selection">
+        </section>
+        
+        <section id="details" class="details-container">
+            <p>Select a year to view the details.</p>
+        </section>
+        
+        <section id="syllabus-container" class="details-container">
+            <!-- 1st Year -->
+            <div class="syllabus-container" id="syllabus-1st-1">
+                <img src="car.png" alt="1st Year Semester 1 Syllabus" class="syllabus-image">
+                <div class="download-link">
+                    <a href="car.png" download>Download Syllabus</a>
+                </div>
+                <div class="subject-container" id="subjects-1st-1">
+                    <button>Subject 1</button>
+                    <button>Subject 2</button>
+                    <button>Subject 3</button>
+                    <button>Subject 4</button>
+                    <button>Subject 5</button>
+                    <button>Subject 6</button>
+                </div>
+                <br><br>
+            </div>
+            <div class="syllabus-container" id="syllabus-1st-2">
+                <img src="syllabus-1st-2.png" alt="1st Year Semester 2 Syllabus" class="syllabus-image">
+                <div class="download-link">
+                    <a href="syllabus-1st-2.png" download>Download Syllabus</a>
+                </div>
+                <div class="subject-container" id="subjects-1st-2">
+                    <button>Subject 1</button>
+                    <button>Subject 2</button>
+                    <button>Subject 3</button>
+                    <button>Subject 4</button>
+                    <button>Subject 5</button>
+                    <button>Subject 6</button>
+                </div>
+                <br><br>
+            </div>
+            
+            <!-- 2nd Year -->
+            <div class="syllabus-container" id="syllabus-2nd-1">
+                <img src="syllabus-2nd-1.png" alt="2nd Year Semester 1 Syllabus" class="syllabus-image">
+                <div class="download-link">
+                    <a href="syllabus-2nd-1.png" download>Download Syllabus</a>
+                </div>
+                <div class="subject-container" id="subjects-2nd-1">
+                    <button>Subject 1</button>
+                    <button>Subject 2</button>
+                    <button>Subject 3</button>
+                    <button>Subject 4</button>
+                    <button>Subject 5</button>
+                    <button>Subject 6</button>
+                </div>
+                <br><br>
+            </div>
+            <div class="syllabus-container" id="syllabus-2nd-2">
+                <img src="syllabus-2nd-2.png" alt="2nd Year Semester 2 Syllabus" class="syllabus-image">
+                <div class="download-link">
+                    <a href="syllabus-2nd-2.png" download>Download Syllabus</a>
+                </div>
+                <div class="subject-container" id="subjects-2nd-2">
+                    <button>Subject 1</button>
+                    <button>Subject 2</button>
+                    <button>Subject 3</button>
+                    <button>Subject 4</button>
+                    <button>Subject 5</button>
+                    <button>Subject 6</button>
+                </div>
+                <br><br>
+            </div>
+            
+            <!-- 3rd Year -->
+            <div class="syllabus-container" id="syllabus-3rd-1">
+                <img src="syllabus-3rd-1.png" alt="3rd Year Semester 1 Syllabus" class="syllabus-image">
+                <div class="download-link">
+                    <a href="syllabus-3rd-1.png" download>Download Syllabus</a>
+                </div>
+                <div class="subject-container" id="subjects-3rd-1">
+                    <button>Subject 1</button>
+                    <button>Subject 2</button>
+                    <button>Subject 3</button>
+                    <button>Subject 4</button>
+                    <button>Subject 5</button>
+                    <button>Subject 6</button>
+                </div>
+                <br><br>
+            </div>
+            <div class="syllabus-container" id="syllabus-3rd-2">
+                <img src="syllabus-3rd-2.png" alt="3rd Year Semester 2 Syllabus" class="syllabus-image">
+                <div class="download-link">
+                    <a href="syllabus-3rd-2.png" download>Download Syllabus</a>
+                </div>
+                <div class="subject-container" id="subjects-3rd-2">
+                    <button>Subject 1</button>
+                    <button>Subject 2</button>
+                    <button>Subject 3</button>
+                    <button>Subject 4</button>
+                    <button>Subject 5</button>
+                    <button>Subject 6</button>
+                </div>
+                <br><br>
+            </div>
+            
+            <!-- 4th Year -->
+            <div class="syllabus-container" id="syllabus-4th-1">
+                <img src="syllabus-4th-1.png" alt="4th Year Semester 1 Syllabus" class="syllabus-image">
+                <div class="download-link">
+                    <a href="syllabus-4th-1.png" download>Download Syllabus</a>
+                </div>
+                <div class="subject-container" id="subjects-4th-1">
+                    <button>Subject 1</button>
+                    <button>Subject 2</button>
+                    <button>Subject 3</button>
+                    <button>Subject 4</button>
+                    <button>Subject 5</button>
+                    <button>Subject 6</button>
+                </div>
+                <br><br>
+            </div>
+            <div class="syllabus-container" id="syllabus-4th-2">
+                <img src="syllabus-4th-2.png" alt="4th Year Semester 2 Syllabus" class="syllabus-image">
+                <div class="download-link">
+                    <a href="syllabus-4th-2.png" download>Download Syllabus</a>
+                </div>
+                <div class="subject-container" id="subjects-4th-2">
+                    <button>Subject 1</button>
+                    <button>Subject 2</button>
+                    <button>Subject 3</button>
+                    <button>Subject 4</button>
+                    <button>Subject 5</button>
+                    <button>Subject 6</button>
+                </div>
+                <br><br>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        function showDetails(year) {
+            const detailsDiv = document.getElementById('details');
+            const semesterContainer = document.getElementById('semester-selection');
+            let detailsContent = '';
+            let semesterButtons = '';
+
+            switch (year) {
+                case '1st':
+                    detailsContent = '<h2>1st Year Details</h2><p>Here Select the Sem for 1st Year.</p>';
+                    semesterButtons = '<button onclick="showSemesterDetails(\'1st\', \'1\')">Sem 1</button><button onclick="showSemesterDetails(\'1st\', \'2\')">Sem 2</button>';
+                    break;
+                case '2nd':
+                    detailsContent = '<h2>2nd Year Details</h2><p>Here Select the Sem for 2nd Year.</p>';
+                    semesterButtons = '<button onclick="showSemesterDetails(\'2nd\', \'1\')">Sem 1</button><button onclick="showSemesterDetails(\'2nd\', \'2\')">Sem 2</button>';
+                    break;
+                case '3rd':
+                    detailsContent = '<h2>3rd Year Details</h2><p>Here Select the Sem for 3rd Year.</p>';
+                    semesterButtons = '<button onclick="showSemesterDetails(\'3rd\', \'1\')">Sem 1</button><button onclick="showSemesterDetails(\'3rd\', \'2\')">Sem 2</button>';
+                    break;
+                case '4th':
+                    detailsContent = '<h2>4th Year Details</h2><p>Here Select the Sem for 4th Year.</p>';
+                    semesterButtons = '<button onclick="showSemesterDetails(\'4th\', \'1\')">Sem 1</button><button onclick="showSemesterDetails(\'4th\', \'2\')">Sem 2</button>';
+                    break;
+            }
+
+            detailsDiv.innerHTML = detailsContent;
+            semesterContainer.innerHTML = semesterButtons;
+            document.querySelectorAll('.syllabus-container').forEach(div => div.classList.remove('active'));
+            document.querySelectorAll('.subject-container').forEach(div => div.classList.remove('active'));
+        }
+
+        function showSemesterDetails(year, semester) {
+            const syllabusId = `syllabus-${year}-${semester}`;
+            const subjectId = `subjects-${year}-${semester}`;
+            document.querySelectorAll('.syllabus-container').forEach(div => div.classList.remove('active'));
+            document.querySelectorAll('.subject-container').forEach(div => div.classList.remove('active'));
+            document.getElementById(syllabusId).classList.add('active');
+            document.getElementById(subjectId).classList.add('active');
+        }
+    </script>
+</body>
+</html>
